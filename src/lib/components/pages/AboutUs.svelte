@@ -60,6 +60,7 @@
 </section>
 
 <style>
+  /* ##### Global Styling ##### */
   * {
     text-transform: uppercase;
   }
@@ -77,6 +78,7 @@
   h1, h2 {
     color: var(--accent2-primary);
     font-size: var(--fs-2xl);
+    margin-bottom: 4rem;
   }
   h3 {
     color: var(--txt-dark-clr);
@@ -114,9 +116,6 @@
     font-weight: bold;
     text-align: center;
 
-    & p {
-      margin: 3rem 0 1rem 0; 
-    }
     & span {
       color: var(--txt-secondary-clr);
     }
