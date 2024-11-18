@@ -30,7 +30,7 @@
         animation: 35s slide infinite linear;
     }
     .logo-container img {
-        height: 50px;
+        height: 40px;
         margin: 0 40px;
     }
      @keyframes slide {
@@ -39,6 +39,14 @@
         }
         to {
           transform: translateX(-100%);
+        }
+    }
+
+    /* Media Query for small-screens */
+    @media (max-width: 768px) {
+        .logo-container img {
+            height: 30px;
+            margin: 0 30px;
         }
     }
 </style>
