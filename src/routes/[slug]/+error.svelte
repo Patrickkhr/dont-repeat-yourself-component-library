@@ -34,37 +34,36 @@
 		justify-content: center;
     background: var(--page-bg-color);
   }
-
   h1 {
     font-size: 7rem;
     font-weight: 900;
     color: var(--accent2-primary);
   }
-
   p {
+    max-width: 80ch;
     font-size: 1.1em;
     font-weight: 600;
-    color: var(--txt-quaternary-clr);
-    max-width: 80ch;
+    font-style: italic;
     margin-bottom: 10vh;
+    color: var(--txt-quaternary-clr);
   }
   
   .error-backdrop {
-    position: relative;
+    z-index: 10;
+    height: 50vh;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
-    height: 50vh;
-    z-index: 10;
   }
   .error-backdrop::before {
     position: absolute;
     content: "";
-    height: 50vh;
     width: 25%;
-    background: var(--accent1-tertiary);
-    z-index: -10;
     left: -10%;
+    height: 50vh;
+    z-index: -10;
     border-radius: var(--radius-lg);
+    background: var(--accent1-tertiary);
   }
 </style>
