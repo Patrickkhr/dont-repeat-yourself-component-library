@@ -78,6 +78,7 @@
     text-transform: initial;
   }
   section {
+    width: 100vw;
     height: 100vh;
 		display: flex;
     position: relative;
@@ -96,6 +97,8 @@
   }
   p:not(#information p),
   blockquote {
+    font-size: 1.1em;
+    font-weight: 600;
     color: var(--txt-quaternary-clr);
     max-width: 72ch;
   }
@@ -113,7 +116,7 @@
 
     & div {
       & img {
-        height: 60vh;
+        width: 60vh;
         aspect-ratio: 1;
         object-fit: cover;
       }
@@ -159,6 +162,17 @@
       }
     }
   }
-  /* ##### Infinite Carrousel ##### */
-
+  
+  /* Media Query for small-screens */
+  @media (max-width: 768px) {
+    #about {
+      flex-direction: column;
+    }
+    #information {
+      grid-template-columns: 85%;
+    }
+    #information article {
+      justify-self: inherit;
+    }
+  }
 </style>
