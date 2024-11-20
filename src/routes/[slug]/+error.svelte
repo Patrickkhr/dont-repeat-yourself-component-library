@@ -3,20 +3,18 @@
 </script>
 
 <section id="error">
-  <div class="error-backdrop">
-    <h1>404</h1>
-    <p>
-      "Looks like you've taken a wrong turn at the bar. This page isn't available, but 
-      our cocktail menu is still on point. Let’s get you back to something delicious!"
-    </p>
-    <Button
-      style="width: 40%;"
-      href="/home" 
-      variant="primary" 
-      title="Back to home" 
-      size="sm" 
-    />
-  </div>
+  <h1>404</h1>
+  <p>
+    "Looks like you've taken a wrong turn at the bar. This page isn't available, but 
+    our cocktail menu is still on point. Let’s get you back to something delicious!"
+  </p>
+  <Button
+    style="width: 40%;"
+    href="/home" 
+    variant="primary" 
+    title="Back to home" 
+    size="sm" 
+  />
 </section>
 
 <style>
@@ -46,24 +44,6 @@
     font-style: italic;
     margin-bottom: 10vh;
     color: var(--txt-quaternary-clr);
-  }
-  
-  .error-backdrop {
-    z-index: 10;
-    height: 50vh;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .error-backdrop::before {
-    position: absolute;
-    content: "";
-    width: 25%;
-    left: -10%;
-    height: 50vh;
-    z-index: -10;
-    border-radius: var(--radius-lg);
-    background: var(--accent1-tertiary);
+    margin: 0 3em 10vh 3em;
   }
 </style>
