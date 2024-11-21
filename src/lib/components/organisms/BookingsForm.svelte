@@ -6,42 +6,24 @@
 
 <section>
   <form method="post" action="/"  class="">
-    <h1>Boeken</h1>
-    <div class="">
-      <label for="first-name">Voornaam:</label>
-      <input type="text" name="first-name" id="first-name" required />
-    </div>
-    <div class="">
-      <label for="last-name">Achternaam:</label>
-      <input type="text" name="last-name" id="last-name" required />
-    </div>
-    <div class="">
-      <label for="email">Enter your email: </label>
-      <input type="email" name="email" id="email" required />
-    </div>
-    <div class="">
-      <label for="phone">Telefoonnummer:</label>
-      <input type="tel" name="phone" id="phone" required />
-    </div>
-    <div class="">
-      <label for="persons">Hoeveel personen?</label>
-      <input type="text" name="persons" id="persons" required />
-    </div>
-    <div class="">
-      <label for="request">Aanvraag:</label>
-      <textarea id="story" name="story"></textarea>
-    </div>
-    <div class="">
-      <label for="date">Datum:</label>
-      <input type="date" name="date" id="date" required />
-    </div>
-    <div class="">
-      <label for="time">Choose a time for your meeting:</label>
-      <input type="time" name="time" id="time" min="09:00" max="22:00" value="14:30" required />
-    </div>
-    <div class="">
-      <button type="submit">Verstuur</button>
-    </div>
+    <h1 class="animated-text">Boeken</h1>
+    <label for="first-name">Voornaam:</label>
+    <input type="text" name="first-name" id="first-name" required />
+    <label for="last-name">Achternaam:</label>
+    <input type="text" name="last-name" id="last-name" required />
+    <label for="email">Enter your email: </label>
+    <input type="email" name="email" id="email" required />
+    <label for="phone">Telefoonnummer:</label>
+    <input type="tel" name="phone" id="phone" required />
+    <label for="persons">Hoeveel personen?</label>
+    <input type="text" name="persons" id="persons" required />
+    <label for="request">Aanvraag:</label>
+    <textarea id="story" name="story"></textarea>
+    <label for="date">Datum:</label>
+    <input type="date" name="date" id="date" required />
+    <label for="time">Choose a time for your meeting:</label>
+    <input type="time" name="time" id="time" min="09:00" max="22:00" value="14:30" required />
+    <button type="submit">Verstuur</button>
   </form>
   <article>
     <div>
@@ -104,13 +86,8 @@
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
-  form > div {
-    display: flex;
-    flex-direction: column;
-  }
-
-  form > div > input,
-  form > div > textarea {
+  form > input,
+  form > textarea {
     width: 100%;
     padding: 0.625em;
     border: none;
@@ -183,6 +160,46 @@
     width: 100%;
     padding: 1em;
   }
+
+  .animated-text {
+    animation: none; 
+    font-variation-settings: 'wght' 400;
+  }
+  @keyframes fontAnimation {
+    0% {
+      font-variation-settings: 'wght' 700;
+      transform: scale(1);
+    }
+    50% {
+      font-variation-settings: 'wght' 700;
+      transform: scale(1.1);
+    }
+    100% {
+      font-variation-settings: 'wght' 700;
+      transform: scale(1.2);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animated-text {
+    animation: fontAnimation 4s infinite alternate ease-in-out;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  form > input,
+  form > textarea {
+    background-color: rgb(141, 139, 139);
+    color: black;
+  }
+  form label, h1 {
+    color: black;
+  }
+  button {
+    background-color: #f57c00;
+    color: black;
+  }
+}
+
 
   @media (min-width: 30em) {
 
