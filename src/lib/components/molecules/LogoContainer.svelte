@@ -43,11 +43,9 @@
         }
     }
 
-    /* Media Query for small-screens */
-    /* @media (max-width: 768px) {
-        .logo-container img {
-            height: 30px;
-            margin: 0 30px;
-        }
-    } */
+    @media (prefers-reduced-motion) {
+    .logo-container {
+        animation: none;
+    }
+  }
 </style>
