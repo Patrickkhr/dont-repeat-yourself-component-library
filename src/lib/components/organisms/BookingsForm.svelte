@@ -5,7 +5,7 @@
 </script>
 
 <section>
-  <form method="post" action="/"  class="">
+  <form method="post" action="/">
     <h1 class="animated-text">Boeken</h1>
     <label for="first-name">Voornaam:</label>
     <input type="text" name="first-name" id="first-name" required />
@@ -54,7 +54,6 @@
 </section>
 
 <style>
-
   section {
     padding-inline: 2em;
     display: flex;
@@ -163,7 +162,6 @@
 
   .animated-text {
     animation: none; 
-    font-variation-settings: 'wght' 400;
   }
   @keyframes fontAnimation {
     0% {
@@ -183,6 +181,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .animated-text {
     animation: fontAnimation 4s infinite alternate ease-in-out;
+    font-variation-settings: 'wght' 400;
   }
 }
 @media (prefers-color-scheme: dark) {

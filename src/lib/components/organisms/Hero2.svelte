@@ -39,16 +39,16 @@
 <section>
   <div>
     <article>
-      <p><span><RouteIcon width="25" height="25" fill="var(--page-bg-color)" /></span>Amstedam & Rottedam</p>
-      <p><span><CocktailIcon width="25" height="25" fill="var(--page-bg-color)" /></span>3 Cocktails</p>
-      <p><span><CocktailIcon width="25" height="25" fill="var(--page-bg-color)" /></span>3 Barreseveringen</p>
-      <p><span><CocktailIcon width="25" height="25" fill="var(--page-bg-color)" /></span>7 Dagen per week</p>
+      <p><span><RouteIcon width="25" height="25" fill="white" /></span>Amstedam & Rottedam</p>
+      <p><span><CocktailIcon width="25" height="25" fill="white" /></span>3 Cocktails</p>
+      <p><span><CocktailIcon width="25" height="25" fill="white" /></span>3 Barreseveringen</p>
+      <p><span><CocktailIcon width="25" height="25" fill="white" /></span>7 Dagen per week</p>
     </article>
     <article>
-      <p><span><RouteIcon width="25" height="25" fill="var(--page-bg-color)" /></span>Zelfgeleide tour van 3-4 uur</p>
-      <p><span><CocktailIcon width="25" height="25" fill="var(--page-bg-color)" /></span>Groepsgroottes 6-30 personen</p>
-      <p><span><CocktailIcon width="25" height="25" fill="var(--page-bg-color)" /></span>Gepersonaliseerde kaart & routes mogelijk</p>
-      <p><span><CocktailIcon width="25" height="25" fill="var(--page-bg-color)" /></span>Snacks mogelijk</p>
+      <p><span><RouteIcon width="25" height="25" fill="white" /></span>Zelfgeleide tour van 3-4 uur</p>
+      <p><span><CocktailIcon width="25" height="25" fill="white" /></span>Groepsgroottes 6-30 personen</p>
+      <p><span><CocktailIcon width="25" height="25" fill="white" /></span>Gepersonaliseerde kaart & routes mogelijk</p>
+      <p><span><CocktailIcon width="25" height="25" fill="white" /></span>Snacks mogelijk</p>
     </article>
   </div>
 </section>
@@ -140,6 +140,15 @@
     animation: heading;
     animation-duration: 3s;
     animation-fill-mode: forwards;
+  }
+
+  article > p {
+    color: white;
+    font-weight: 600;
+  }
+
+  article > p > span {
+    margin-right: 0.5em;
   }
 
   @keyframes heading {
