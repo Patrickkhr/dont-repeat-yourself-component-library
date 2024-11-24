@@ -1,7 +1,7 @@
 <script>
     import Scenery from '$lib/assets/about-us-scenery.jpg'
     import Skyline from '$lib/assets/backdrop-skyline.png'
-    import InfiniteSlider from '../organisms/InfiniteSlider.svelte'
+    import InfiniteCarrousel from '../organisms/InfiniteCarrousel.svelte'
     import Title from '../atoms/Title.svelte'
 </script>
 
@@ -12,9 +12,9 @@
 <section id="about">
   <article>
     <Title 
-      name='Over ons' 
-      variant='light' 
-      size='l' />
+      headertype='h1'
+      content='Over ons' 
+      color='light' />
     <blockquote class="initial">"Verken je stad, cocktail voor cocktail"</blockquote>
   </article>
   <div>
@@ -24,9 +24,9 @@
 
 <section id="mission">
   <Title 
-    name='Onze missie' 
-    variant='light' 
-    size='l' />
+    headertype='h2'
+    content='Onze Missie' 
+    color='light' />
   <p class="initial">
     Net als een goed gemaakte cocktail beschouwt WOGO uitgaan als een onvergetelijke ervaring. Wij willen mensen samenbrengen 
     die waarde hechten aan goede drankjes, mooie bars en vooral goed gezelschap. Onze missie is dus dat onze mensen cocktails 
@@ -42,17 +42,17 @@
 
 <section id="partners">
   <Title 
-    name='Partners' 
-    variant='dark' 
-    size='l' />
-  <InfiniteSlider />
+    headertype='h2'
+    content='Partners' 
+    color='dark' />
+  <InfiniteCarrousel />
 </section>
 
 <section id="getuigenissen">
   <Title 
-    name='Getuigenissen' 
-    variant='light' 
-    size='l' />
+    headertype='h2'
+    content='Getuigenissen' 
+    color='light' />
   <p>WoGo is in elk geval een geweldige partner. Snel bewegend, flexibel en altijd open voor nieuwe ideeën en samenwerkingen!</p>
   <span>Timo Janse // 2022 // Eigenaar Vliegende Nederlanders en veel meer.</span>
   <img src={Skyline} alt="Cartoony skyline">
@@ -62,33 +62,33 @@
 <section id="information">
   <article>
     <Title 
-      name='Kledingsvoorschrift' 
-      variant='dark' 
-      size='m' />
+      headertype='h3'
+      content='Kledingsvoorschriften' 
+      color='dark' />
     <p class="initial">Geen strikte kledingvoorschrift, maar alsjeblieft, geen korte broek of zonnebril.</p>
   </article>
 
   <article>
     <Title 
-      name='Reserveringen' 
-      variant='dark' 
-      size='m' />
+      headertype='h3'
+      content='Reserveringen' 
+      color='dark' />
     <p class="initial">Kies een balk op de pagina Bars, en kijk welke promotie ze beschikbaar hebben!</p>
   </article>
 
   <article>
     <Title 
-      name='Evenementen' 
-      variant='dark' 
-      size='m' />
+      headertype='h3'
+      content='Evenementen' 
+      color='dark' />
     <p class="initial">Koop tickets via onze evenementenpagina, en geniet van de lekkerste cocktails van Amsterdam.</p>
   </article>
 
   <article>
     <Title 
-      name='Vragen' 
-      variant='dark' 
-      size='m' />
+      headertype='h3'
+      content='Vragen' 
+      color='dark' />
     <p class="initial">Stel gerust al uw vragen, of neem contact met ons op met klachten of complimenten.</p>
   </article>
 </section>

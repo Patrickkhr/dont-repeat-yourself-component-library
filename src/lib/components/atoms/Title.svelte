@@ -1,16 +1,34 @@
 <script>
-  export let name = ''
-  export let variant = ''
-  export let size = ''
+  export let headertype = ''
+  export let content = ''
+  export let color = ''
 </script>
 
-<h2 class="title title-{variant} title-{size}">
-    {name}
-</h2>
+{#if headertype === 'h1' }
+  <h1 class="title-{color}">
+    {content}
+  </h1>
+{:else if headertype === 'h2' }
+  <h2 class="title-{color}">
+    {content}
+  </h2>
+{:else if headertype === 'h3' }
+  <h3 class="title-{color}">
+    {content}
+  </h3>
+{/if}
 
 <style>
-  .title {
-    margin-bottom: 2rem;
+  h1 {
+    font-size: var(--fs-2xl) !important;
+  }
+
+  h2 {
+    font-size: var(--fs-lg) !important;
+  }
+
+  h3 {
+    font-size: var(--fs-md) !important;
   }
 
   .title-light {
@@ -18,17 +36,5 @@
   }
   .title-dark {
     color: var(--txt-dark-clr);
-  }
-
-  .title-s {
-    font-size: var(--fs-sm);
-  }
-
-  .title-m {
-    font-size: var(--fs-lg);
-  }
-
-  .title-l {
-    font-size: var(--fs-2xl);
   }
 </style>

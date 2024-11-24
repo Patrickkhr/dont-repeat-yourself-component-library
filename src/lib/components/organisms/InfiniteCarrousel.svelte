@@ -2,20 +2,20 @@
     import LogoContainer from "../molecules/LogoContainer.svelte";
 </script>
 
-<div class="logos">
+<div class="infinite-carrousel">
     <LogoContainer />
-    <LogoContainer />
+    <LogoContainer aria-hidden="true" />
 </div>
 
 <style>
-    .logos {
+    .infinite-carrousel {
         white-space: nowrap;
     }
-    .logos:hover :global(.logo-container) {
+    .infinite-carrousel:hover :global(.logo-container) {
         animation-play-state: paused;
     }
-    .logos::before,
-    .logos::after {
+    .infinite-carrousel::before,
+    .infinite-carrousel::after {
         position: absolute;
         z-index: 10;
         content: "";
@@ -28,7 +28,7 @@
         );
         left: 0;
     }
-    .logos::after {
+    .infinite-carrousel::after {
         left: unset;
         right: 0;
         transform: rotateZ(180deg);
@@ -36,8 +36,8 @@
 
     /* Media Query for small-screens */
     @media (max-width: 768px) {
-        .logos::before,
-        .logos::after {
+        .infinite-carrousel::before,
+        .infinite-carrousel::after {
             width: 50px;
         }
     }
