@@ -4,7 +4,7 @@
 
 <div class="infinite-carrousel">
     <LogoContainer />
-    <LogoContainer aria-hidden="true" />
+    <LogoContainer />
 </div>
 
 <style>
@@ -19,8 +19,9 @@
         position: absolute;
         z-index: 10;
         content: "";
-        height: 50px;
-        width: 250px;
+        height: 3vw;
+        min-height: 30px;
+        width: 15%;
         background: linear-gradient(
             to right,
             var(--accent2-primary),
@@ -32,13 +33,5 @@
         left: unset;
         right: 0;
         transform: rotateZ(180deg);
-    }
-
-    /* Media Query for small-screens */
-    @media (max-width: 768px) {
-        .infinite-carrousel::before,
-        .infinite-carrousel::after {
-            width: 50px;
-        }
     }
 </style>
