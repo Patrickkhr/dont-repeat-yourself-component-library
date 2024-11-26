@@ -1,4 +1,4 @@
-// Partner Images
+// Partner images
 export { default as Vibe } from '$lib/assets/vibe.png'
 export { default as Lillet } from '$lib/assets/lillet.png'
 export { default as Pernod } from '$lib/assets/pernod.png'

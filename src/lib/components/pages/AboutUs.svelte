@@ -94,7 +94,7 @@
 </section>
 
 <style>
-  /* ##### Global Styling ##### */
+  /* Global Styling */
   * {
     text-transform: uppercase;
     line-height: 1.4;
@@ -122,7 +122,7 @@
     font-style: italic;
   }
 
-  /* ##### Sections ##### */
+  /* 'Over ons' section */
   #about {
     flex-direction: row;
 
@@ -141,9 +141,25 @@
       }
     }
   }
+
+  /* 'Onze missie' section */
   #mission {
     background: var(--accent1-tertiary);
   }
+
+  /* 'Partners' section */
+  #partners {
+    height: fit-content;
+    align-items: inherit;
+    text-align: center;
+    background: var(--accent2-primary);
+
+    & h2 {
+      margin: 3rem 0;
+    }
+  }
+
+  /* 'Getuigenissen' section */
   #getuigenissen {
     font-weight: bold;
     text-align: center;
@@ -157,12 +173,8 @@
       bottom: 0;
     }
   }
-  #partners {
-    height: 50vh;
-    align-items: inherit;
-    text-align: center;
-    background: var(--accent2-primary);
-  }
+
+  /* 'Informatie' section */
   #information {
     background: var(--accent2-primary);
     display: grid;

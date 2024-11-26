@@ -22,13 +22,11 @@
   h1 {
     font-size: var(--fs-2xl) !important;
   }
-
   h2 {
-    font-size: var(--fs-lg) !important;
+    font-size: var(--fs-xl) !important;
   }
-
   h3 {
-    font-size: var(--fs-md) !important;
+    font-size: var(--fs-lg) !important;
   }
 
   .title-light {
