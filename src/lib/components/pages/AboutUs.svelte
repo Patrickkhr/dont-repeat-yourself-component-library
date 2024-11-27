@@ -5,7 +5,6 @@
     import Title from '../atoms/Title.svelte'
 
     export let items
-    console.log(items[3].componentsCollection.items)
 </script>
 
 <svelte:head>
@@ -44,10 +43,10 @@
 <section id="getuigenissen">
   <Title 
     headertype='h2'
-    content='Getuigenissen' 
+    content='{items[3].componentsCollection.items[0].title}' 
     color='light' />
-  <p>WoGo is in elk geval een geweldige partner. Snel bewegend, flexibel en altijd open voor nieuwe ideeën en samenwerkingen!</p>
-  <span>Timo Janse // 2022 // Eigenaar Vliegende Nederlanders en veel meer.</span>
+  <p>{items[3].componentsCollection.items[0].textParagraph}</p>
+  <span>{items[3].componentsCollection.items[1].textParagraph}</span>
   <img src={Skyline} alt="Cartoony skyline">
 </section>
 
@@ -55,33 +54,33 @@
   <article>
     <Title 
       headertype='h3'
-      content='Kledingsvoorschriften' 
+      content='{items[4].componentsCollection.items[0].title}' 
       color='dark' />
-    <p class="initial">Geen strikte kledingvoorschrift, maar alsjeblieft, geen korte broek of zonnebril.</p>
+    <p class="initial">{items[4].componentsCollection.items[0].textParagraph}</p>
   </article>
 
   <article>
     <Title 
       headertype='h3'
-      content='Reserveringen' 
+      content='{items[4].componentsCollection.items[1].title}' 
       color='dark' />
-    <p class="initial">Kies een balk op de pagina Bars, en kijk welke promotie ze beschikbaar hebben!</p>
+    <p class="initial">{items[4].componentsCollection.items[1].textParagraph}</p>
   </article>
 
   <article>
     <Title 
       headertype='h3'
-      content='Evenementen' 
+      content='{items[4].componentsCollection.items[2].title}' 
       color='dark' />
-    <p class="initial">Koop tickets via onze evenementenpagina, en geniet van de lekkerste cocktails van Amsterdam.</p>
+    <p class="initial">{items[4].componentsCollection.items[2].textParagraph}</p>
   </article>
 
   <article>
     <Title 
       headertype='h3'
-      content='Vragen' 
+      content='{items[4].componentsCollection.items[3].title}' 
       color='dark' />
-    <p class="initial">Stel gerust al uw vragen, of neem contact met ons op met klachten of complimenten.</p>
+    <p class="initial">{items[4].componentsCollection.items[3].textParagraph}</p>
   </article>
 </section>
 
