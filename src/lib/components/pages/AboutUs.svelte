@@ -3,6 +3,9 @@
     import Skyline from '$lib/assets/backdrop-skyline.png'
     import InfiniteCarrousel from '../organisms/InfiniteCarrousel.svelte'
     import Title from '../atoms/Title.svelte'
+
+    export let items
+    console.log('hello', items[2].componentsCollection)
 </script>
 
 <svelte:head>
@@ -23,21 +26,16 @@
 </section>
 
 <section id="mission">
+  <!-- {#each items[2].componentsCollection.items as item}
+    <h3>{item.title}</h3>
+    <p>{item.textParagraph}</p>
+  {/each} -->
+
   <Title 
     headertype='h2'
-    content='Onze Missie' 
+    content='{items[0].title}' 
     color='light' />
-  <p class="initial">
-    Net als een goed gemaakte cocktail beschouwt WOGO uitgaan als een onvergetelijke ervaring. Wij willen mensen samenbrengen 
-    die waarde hechten aan goede drankjes, mooie bars en vooral goed gezelschap. Onze missie is dus dat onze mensen cocktails 
-    ontdekken en genieten van geweldige avonden. Daarom zoeken we voortdurend naar de beste bars en plaatsen om te bezoeken en 
-    werken we samen met de beste (spirit)merken om onvergetelijke momenten te bezorgen, zodat onze klanten zich nooit zorgen 
-    hoeven te maken over waar ze heen gaan! <br><br>
-
-    WOGO is tijdens de lockdowns begonnen met haar Cocktail Walks in Amsterdam om de bars te ondersteunen en haar klanten de 
-    kans te geven de stad te verkennen onder het genot van fantastische cocktails. Het doel is om deze geest voort te zetten 
-    en bars en merken een podium te bieden voor zowel nieuwelingen als liefhebbers van cocktails.
-  </p>
+  <p class="initial">{items[1].textParagraph}</p>
 </section>
 
 <section id="partners">
@@ -57,7 +55,6 @@
   <span>Timo Janse // 2022 // Eigenaar Vliegende Nederlanders en veel meer.</span>
   <img src={Skyline} alt="Cartoony skyline">
 </section>
-
 
 <section id="information">
   <article>
