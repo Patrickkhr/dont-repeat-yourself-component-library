@@ -5,7 +5,7 @@
     import Title from '../atoms/Title.svelte'
 
     export let items
-    console.log('hello', items[2].componentsCollection)
+    console.log(items[3].componentsCollection.items)
 </script>
 
 <svelte:head>
@@ -16,9 +16,9 @@
   <article>
     <Title 
       headertype='h1'
-      content='Over ons' 
+      content='{items[0].title}' 
       color='light' />
-    <blockquote class="initial">"Verken je stad, cocktail voor cocktail"</blockquote>
+    <blockquote class="initial">{items[0].textParagraph}</blockquote>
   </article>
   <div>
     <img src={Scenery} alt="Two people toasting">
@@ -26,14 +26,9 @@
 </section>
 
 <section id="mission">
-  <!-- {#each items[2].componentsCollection.items as item}
-    <h3>{item.title}</h3>
-    <p>{item.textParagraph}</p>
-  {/each} -->
-
   <Title 
     headertype='h2'
-    content='{items[0].title}' 
+    content='{items[1].title}' 
     color='light' />
   <p class="initial">{items[1].textParagraph}</p>
 </section>
@@ -41,7 +36,7 @@
 <section id="partners">
   <Title 
     headertype='h2'
-    content='Partners' 
+    content='{items[2].title}' 
     color='dark' />
   <InfiniteCarrousel />
 </section>
