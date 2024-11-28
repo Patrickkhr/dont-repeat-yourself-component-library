@@ -11,7 +11,7 @@
 <style>
   .infinite-carrousel {
     white-space: nowrap;
-    margin: 3rem 0;
+    margin: var(--margin) 0;
   }
   .infinite-carrousel:hover :global(.logo-container) {
     animation-play-state: paused;

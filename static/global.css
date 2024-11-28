@@ -147,4 +147,7 @@ h1, h2 {
     --radius-lg: 0.8em;
     --btn-radius: 50em;
     --radius-full: 100vmax;
+
+    /* margin */
+    --margin: 3rem;
 }

@@ -5,6 +5,7 @@
     import Title from '../atoms/Title.svelte'
 
     export let items
+    let content = items[3].componentsCollection.items
 </script>
 
 <svelte:head>
@@ -43,45 +44,25 @@
 <section id="getuigenissen">
   <Title 
     headertype='h2'
-    content='{items[3].componentsCollection.items[0].title}' 
+    content='{content[0].title}' 
     color='light' />
-  <p>{items[3].componentsCollection.items[0].textParagraph}</p>
-  <span>{items[3].componentsCollection.items[1].textParagraph}</span>
+  <p>{content[0].textParagraph}</p>
+  <span>{content[1].textParagraph}</span>
   <img src={Skyline} alt="Cartoony skyline">
 </section>
 
 <section id="information">
-  <article>
-    <Title 
-      headertype='h3'
-      content='{items[4].componentsCollection.items[0].title}' 
-      color='dark' />
-    <p class="initial">{items[4].componentsCollection.items[0].textParagraph}</p>
-  </article>
-
-  <article>
-    <Title 
-      headertype='h3'
-      content='{items[4].componentsCollection.items[1].title}' 
-      color='dark' />
-    <p class="initial">{items[4].componentsCollection.items[1].textParagraph}</p>
-  </article>
-
-  <article>
-    <Title 
-      headertype='h3'
-      content='{items[4].componentsCollection.items[2].title}' 
-      color='dark' />
-    <p class="initial">{items[4].componentsCollection.items[2].textParagraph}</p>
-  </article>
-
-  <article>
-    <Title 
-      headertype='h3'
-      content='{items[4].componentsCollection.items[3].title}' 
-      color='dark' />
-    <p class="initial">{items[4].componentsCollection.items[3].textParagraph}</p>
-  </article>
+  <div>
+    {#each items[4].componentsCollection.items as item}
+      <article>
+        <Title 
+          headertype='h3'
+          content='{item.title}' 
+          color='dark' />
+        <p class="initial">{item.textParagraph}</p>
+      </article>
+    {/each}
+  </div>
 </section>
 
 <style>
@@ -126,7 +107,7 @@
 
     & div {
       & img {
-        width: 60vh;
+        max-width: 60%;
         aspect-ratio: 1;
         object-fit: cover;
       }
@@ -136,6 +117,11 @@
   /* 'Onze missie' section */
   #mission {
     background: var(--accent1-tertiary);
+
+    & p {
+      font-weight: 400 !important;
+      margin: 0 var(--margin);
+    }
   }
 
   /* 'Partners' section */
@@ -146,7 +132,7 @@
     background: var(--accent2-primary);
 
     & h2 {
-      margin: 3rem 0;
+      margin: var(--margin) 0;
     }
   }
 
@@ -154,9 +140,14 @@
   #getuigenissen {
     font-weight: bold;
     text-align: center;
+    overflow: hidden;
+
+    & p {
+      margin: 0 var(--margin);
+    }
 
     & span {
-      margin-top: 2rem;
+      margin: var(--margin);
       color: var(--txt-secondary-clr);
     }
     & img {
@@ -167,30 +158,33 @@
 
   /* 'Informatie' section */
   #information {
+    min-height: fit-content;
     background: var(--accent2-primary);
-    display: grid;
-    grid-template-columns: 40% 40%;
+
+    & div {
+      display: flex;
+      flex-flow: row wrap
+    }
 
     & article {
       justify-self: center;
+      margin: var(--margin) 0;
+      min-width: 50%;
 
       & p {
-        max-width: 50ch;
-        letter-spacing: 2px;
+        max-width: 40ch;
       }
     }
   }
   
   /* Media Query for small-screens */
-  @media (max-width: 768px) {
+  @media (max-width: 1400px) {
     #about {
       flex-direction: column;
     }
-    #information {
-      grid-template-columns: 85%;
-    }
-    #information article {
-      justify-self: inherit;
+    #about div {
+      width: 100%;
+      margin: var(--margin) 0;
     }
   }
 </style>

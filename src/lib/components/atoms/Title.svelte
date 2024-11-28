@@ -19,6 +19,9 @@
 {/if}
 
 <style>
+  h1, h2, h3 {
+    margin-bottom: calc(var(--margin) / 3);
+  }
   h1 {
     font-size: var(--fs-2xl) !important;
   }
