@@ -52,7 +52,6 @@
 </section>
 
 <section id="information">
-  <div>
     {#each items[4].componentsCollection.items as item}
       <article>
         <Title 
@@ -62,14 +61,13 @@
         <p class="initial">{item.textParagraph}</p>
       </article>
     {/each}
-  </div>
 </section>
 
 <style>
   /* Global Styling */
   * {
-    text-transform: uppercase;
     line-height: 1.4;
+    text-transform: uppercase;
   }
   .initial {
     text-transform: initial;
@@ -126,9 +124,9 @@
 
   /* 'Partners' section */
   #partners {
+    text-align: center;
     height: fit-content;
     align-items: inherit;
-    text-align: center;
     background: var(--accent2-primary);
 
     & h2 {
@@ -138,8 +136,8 @@
 
   /* 'Getuigenissen' section */
   #getuigenissen {
-    font-weight: bold;
     text-align: center;
+    font-weight: bold;
     overflow: hidden;
 
     & p {
@@ -158,27 +156,22 @@
 
   /* 'Informatie' section */
   #information {
-    min-height: fit-content;
     background: var(--accent2-primary);
-
-    & div {
-      display: flex;
-      flex-flow: row wrap
-    }
+    min-height: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     & article {
-      justify-self: center;
-      margin: var(--margin) 0;
-      min-width: 50%;
+      margin: var(--margin);
 
       & p {
-        max-width: 40ch;
+        max-width: 36ch;
       }
     }
   }
   
   /* Media Query for small-screens */
-  @media (max-width: 1400px) {
+  @media (max-width: 768px) {
     #about {
       flex-direction: column;
     }
