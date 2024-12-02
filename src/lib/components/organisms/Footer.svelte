@@ -76,6 +76,7 @@
       'form'
       'nav'
       'logo-social';
+    padding-top: 4rem;
   }
 
   .footer-logo-social {
