@@ -1,15 +1,20 @@
 <script>
-  export let type
-  export let variant = ''
-  export let size = ''
-  export let href = ''
-  export let title = ''
-  export let icon = ''
-  export let iconColor = ''
+  export let type;
+  export let variant = "";
+  export let size = "";
+  export let href = "";
+  export let title = "";
+  export let icon = "";
+  export let iconColor = "";
 </script>
 
 {#if href}
-  <a {href} data-sveltekit-preload-data class="btn btn-{variant} btn-{size}" {...$$restProps}>
+  <a
+    {href}
+    data-sveltekit-preload-data
+    class="btn btn-{variant} btn-{size}"
+    {...$$restProps}
+  >
     {title}
     {#if icon}
       <span class="btn-icon">
@@ -47,7 +52,7 @@
     color: var(--clr);
     border: var(--border);
     padding: var(--btn-padding);
-    font-size: calc(var(--scale, 1) * 1rem);
+    font-size: 18px;
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition:
@@ -125,7 +130,7 @@
   @media (min-width: 48em) {
     .btn-m {
       --scale: 1.5;
-      --btn-padding: 0.8em 1.4em;
+      --btn-padding: 0.8em 2em;
     }
   }
 </style>
