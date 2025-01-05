@@ -4,7 +4,7 @@
   const items = itemCollection.componentsCollection.items;
 </script>
 
-<section class="articles">
+<section>
   {#each items as item}
     <article>
       <div class="card-header">
@@ -101,30 +101,33 @@
     border-radius: 8px;
     padding: 0.1em;
   }
-  .articles {
+
+  section {
+    width: 80%;
+    max-width: 1000px; /* De section zal niet breder worden dan 1200px */
+    min-width: 300px; /* De section zal niet smaller worden dan 300px */
+    margin: 0 auto;
     margin-top: 2em;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 20px;
   }
 
   article {
+    display: block;
     width: 80%;
     max-width: 350px;
     height: 425px;
     border: 1px solid #ccc;
     /* padding: 15px; */
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #ffe5d9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-  }
-  article {
-    background-color: #ffe5d9;
   }
 
   article img {
@@ -180,16 +183,6 @@
   }
 
   @media screen and (min-width: 768px) {
-    .articles {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    article {
-      flex: 1 1 32%;
-      margin-bottom: 20px;
-    }
     button {
       padding: 0.7em 2em 0.7em 2em;
     }
