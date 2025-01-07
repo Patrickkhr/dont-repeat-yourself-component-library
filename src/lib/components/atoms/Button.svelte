@@ -8,11 +8,12 @@
   export let iconColor = "";
 </script>
 
-{#if href}
+{#if href && variant === "primary"}
+  <!-- Als er een href is en variant is 'primary', render een <a> element -->
   <a
     {href}
     data-sveltekit-preload-data
-    class="btn btn-{variant} btn-{size}"
+    class="btn btn-primary btn-{size}"
     {...$$restProps}
   >
     {title}
@@ -23,8 +24,63 @@
     {/if}
     <slot></slot>
   </a>
-{:else}
-  <button {type} class="btn btn-{variant} btn-{size}" {...$$restProps} on:click>
+{:else if href && variant === "secondary"}
+  <!-- Als er een href is en variant is 'secondary', render een <a> element -->
+  <a
+    {href}
+    data-sveltekit-preload-data
+    class="btn btn-secondary btn-{size}"
+    {...$$restProps}
+  >
+    {title}
+    {#if icon}
+      <span class="btn-icon">
+        <svelte:component this={icon} svgColor={iconColor} {...$$restProps} />
+      </span>
+    {/if}
+    <slot></slot>
+  </a>
+{:else if href && variant === "tertiary"}
+  <!-- Als er een href is en variant is 'tertiary', render een <a> element -->
+  <a
+    {href}
+    data-sveltekit-preload-data
+    class="btn btn-tertiary btn-{size}"
+    {...$$restProps}
+  >
+    {title}
+    {#if icon}
+      <span class="btn-icon">
+        <svelte:component this={icon} svgColor={iconColor} {...$$restProps} />
+      </span>
+    {/if}
+    <slot></slot>
+  </a>
+{:else if variant === "primary"}
+  <!-- Als er geen href is en variant is 'primary', render een <button> element -->
+  <button {type} class="btn btn-primary btn-{size}" {...$$restProps} on:click>
+    {title}
+    {#if icon}
+      <span class="btn-icon">
+        <svelte:component this={icon} svgColor={iconColor} {...$$restProps} />
+      </span>
+    {/if}
+    <slot></slot>
+  </button>
+{:else if variant === "secondary"}
+  <!-- Als er geen href is en variant is 'secondary', render een <button> element -->
+  <button {type} class="btn btn-secondary btn-{size}" {...$$restProps} on:click>
+    {title}
+    {#if icon}
+      <span class="btn-icon">
+        <svelte:component this={icon} svgColor={iconColor} {...$$restProps} />
+      </span>
+    {/if}
+    <slot></slot>
+  </button>
+{:else if variant === "tertiary"}
+  <!-- Als er geen href is en variant is 'tertiary', render een <button> element -->
+  <button {type} class="btn btn-tertiary btn-{size}" {...$$restProps} on:click>
     {title}
     {#if icon}
       <span class="btn-icon">
@@ -37,27 +93,38 @@
 
 <style>
   .btn {
-    display: inline-flex;
+    display: flex;
+    padding: 0.7em 1.5em 0.7em 1.5em;
+    border-radius: 0.4em;
     align-items: center;
     vertical-align: middle;
     justify-content: center;
     text-align: center;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     line-height: var(--lh-1);
-    font-weight: 700;
     text-decoration: none;
+    padding: 0.7em 0.5em 0.7em 0.5em;
     gap: 0.5rem;
     border: 0;
     background-color: var(--bgc);
     color: var(--clr);
     border: var(--border);
-    padding: var(--btn-padding);
-    font-size: 18px;
+    font-size: 14px;
     box-shadow: var(--box-shadow);
     cursor: pointer;
     transition:
       box-shadow 0.2s,
       transform 0.3s;
+  }
+
+  @media screen and (min-width: 768px) {
+    .btn-secondary,
+    .btn-tertiary {
+      padding: 0.7em 1.5em 0.7em 1.5em;
+    }
+    .btn-tertiary .btn-icon {
+      display: block;
+    }
   }
 
   .btn-primary {
@@ -66,12 +133,23 @@
     color: var(--btn-primary-text-clr);
     box-shadow: var(--btn-shadow);
     border: 2px solid var(--btn-primary-bg);
+    font-weight: 700;
   }
 
   .btn-secondary {
-    border-radius: var(--btn-radius);
-    color: var(--txt-primary-clr);
-    border: 2px solid var(--btn-primary-bg);
+    border-radius: 0.4em;
+    font-weight: 500;
+    /* color: var(--txt-primary-clr);
+    border: 2px solid var(--btn-primary-bg); */
+    color: #3f2b21;
+    border: 1.5px solid #3f2b21;
+  }
+
+  .btn-tertiary {
+    /* container-type: block-size; */
+    background: #3f2b21;
+    color: #ffe5d9;
+    justify-content: center;
   }
 
   .btn-secondary,
@@ -84,7 +162,9 @@
   .btn-secondary:hover,
   .btn-secondary:focus,
   .btn-primary:hover,
-  .btn-primary:focus {
+  .btn-primary:focus,
+  .btn-tertiary:hover,
+  .btn-tertiary:focus {
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
     transform: scale(1.1);
   }
@@ -92,9 +172,14 @@
   .btn-icon {
     display: flex;
     align-items: center;
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
     transition: transform 0.3s ease;
+  }
+
+  .btn-tertiary .btn-icon {
+    /* display: none; */
+    color: var(--txt-primary-clr);
   }
 
   .btn:hover .btn-icon,

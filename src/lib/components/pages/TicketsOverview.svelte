@@ -24,17 +24,25 @@
   .intro {
     margin-top: 8em;
     padding: 2em;
-    width: auto;
+    width: 100%;
     /* display: block; */
     background-color: #3f2b21;
   }
 
   ul {
     padding-top: 0.5em;
+    padding-right: 2em;
     display: flex;
     justify-content: center;
     list-style: none;
-    flex-wrap: wrap;
+    font-size: 14px;
+    /* flex-wrap: wrap; */
+  }
+
+  @media screen and (min-width: 768px) {
+    ul {
+      font-size: 16px;
+    }
   }
 
   li {
@@ -68,9 +76,14 @@
   }
 
   .tours {
-    /* margin-top: 2em; */
-    padding: 5em;
+    width: 60%;
+    max-width: 100vw;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 20px;

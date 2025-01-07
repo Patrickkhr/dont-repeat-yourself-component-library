@@ -1,30 +1,30 @@
 <script>
-  import { page } from '$app/stores'
-  import { onMount } from 'svelte'
+  import { page } from "$app/stores";
+  import { onMount } from "svelte";
 
-  let filter = []
-  export let cities
+  let filter = [];
+  export let cities;
 
   onMount(() => {
-    const urlSearchParams = new URLSearchParams($page.url.search)
-    filter = urlSearchParams.getAll('locatie') || []
-  })
+    const urlSearchParams = new URLSearchParams($page.url.search);
+    filter = urlSearchParams.getAll("locatie") || [];
+  });
 
   function applyFilter() {
     return function (event) {
-      event.preventDefault()
-      const formData = new FormData(event.target)
-      const locatie = formData.get('locatie')
-      const url = new URL(window.location)
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const locatie = formData.get("locatie");
+      const url = new URL(window.location);
 
       if (locatie) {
-        url.searchParams.set('locatie', locatie)
+        url.searchParams.set("locatie", locatie);
       } else {
-        url.searchParams.delete('locatie')
+        url.searchParams.delete("locatie");
       }
 
-      window.location = url
-    }
+      window.location = url;
+    };
   }
 </script>
 
@@ -63,9 +63,6 @@
     color: var(--accent1-primary);
     text-transform: uppercase;
     border-radius: 0.8rem;
-  }
-
-  option {
   }
 
   button {
